@@ -17,15 +17,11 @@
         <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
 
         <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-        <!--
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        -->
 
         <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
-        <!--
         <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-        -->
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -33,17 +29,155 @@
     </head>
     <body>
 
-        <!-- Add your site or application content here -->
+        <div class="wrap">
+            
+            <!-- Header -->
+            <header>
+                <h1>Tough Mudder Boot Camp</h1>
+            </header>   <!-- end header -->
 
-        <script src="js/vendor/zepto.min.js"></script>
-        <script src="js/helper.js"></script>
+            <!-- Boot Camp Select Buttons -->
+            <div class="boot-camp-select">
+                <p><button>Mudderling</button></p>
+                <p><button>Maybe Mudder</button></p>
+                <p><button>Tough Mudder</button></p>
+            </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var JSON = {
+                "bootCamps": [
+                    {
+                        "name": "Mudderling",
+                        "obstacles": [
+                            {
+                                "name": "Running",
+                                "description": null,
+                                "time": 60,
+                                "group": "Warm-Up"
+                            },
+                            {
+                                "name": "Grapevine",
+                                "description": null,
+                                "time": 60,
+                                "group": "Warm-Up"
+                            },
+                            {
+                                "name": "Side Shuffle",
+                                "description": null,
+                                "time": 60,
+                                "group": "Warm-Up"
+                            },
+                            {
+                                "name": "High Knees",
+                                "description": null,
+                                "time": 60,
+                                "group": "Warm-Up"
+                            },
+                            {
+                                "name": "Butt Kicks",
+                                "description": null,
+                                "time": 60,
+                                "group": "Warm-Up"
+                            },
+                            {
+                                "name": "You Don't Know Jacks",
+                                "description": "Jumping Jacks: Just like you did in elementary school.  This time, only bring your arms down to your shoulders (not your hips) and all the way back up.  We want to see your hands graze each other when they go up.",
+                                "time": 120,
+                                "group": "Circuit 1"
+                            },
+                            {
+                                "name": "Cliff Hanger",
+                                "description": "Description for Cliff Hanger",
+                                "time": 60,
+                                "group": "Circuit 1"
+                            },
+                            {
+                                "name": "Rest",
+                                "description": null,
+                                "time": 60,
+                                "group": "Circuit 1"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Maybe Mudder",
+                        "obstacles": []
+                    },
+                    {
+                        "name": "Tough Mudder",
+                        "obstacles": []
+                    }
+                ]
+            }
+
+            /*{
+                    "Mudderling": [
+                        {
+                            "name": "Running",
+                            "description": null,
+                            "time": 120,
+                            "group": "Warm-Up"
+                        },
+                        {
+                            "name": "Grapevine",
+                            "description": null,
+                            "time": 120,
+                            "group": "Warm-Up"
+                        },
+                        {
+                            "name": "Side Shuffle",
+                            "description": null,
+                            "time": 120,
+                            "group": "Warm-Up"
+                        },
+                        {
+                            "name": "High Knees",
+                            "description": null,
+                            "time": 120,
+                            "group": "Warm-Up"
+                        },
+                        {
+                            "name": "Butt Kicks",
+                            "description": null,
+                            "time": 120,
+                            "group": "Warm-Up"
+                        },
+                        {
+                            "name": "You Don't Know Jacks",
+                            "description": "Jumping Jacks: Just like you did in elementary school.  This time, only bring your arms down to your shoulders (not your hips) and all the way back up.  We want to see your hands graze each other when they go up.",
+                            "time": 240,
+                            "group": "Circuit 1"
+                        },
+                        {
+                            "name": "Cliff Hanger",
+                            "description": "Description for Cliff Hanger",
+                            "time": 120,
+                            "group": "Circuit 1"
+                        },
+                        {
+                            "name": "Rest",
+                            "description": null,
+                            "time": 120,
+                            "group": "Circuit 1"
+                        }
+
+                    ],
+                    "Maybe Mudder": [],
+                    "Tough Mudder": []
+                }*/
+        </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
         <script>
             var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
             g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
             s.parentNode.insertBefore(g,s)}(document,"script"));
-        </script>
+        </script> -->
     </body>
 </html>

@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <name> Zach Handing <role> Designer, Developer
 
 # THANKS
 
-    <name>
+    <name> Those responsible for creating and organizing the Tough Mudder event, and the training regimens for them.
 
 # TECHNOLOGY COLOPHON
 
