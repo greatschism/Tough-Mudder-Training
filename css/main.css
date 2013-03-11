@@ -65,9 +65,14 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-body { text-align: center; }
+#pageHome { text-align: center; }
 
+.time p { margin: 0; font-size: 5em; font-weight: bold; text-align: center; }
 
+.exerciseInfo h2 { margin-bottom: 0; }
+.exerciseInfo h5 { margin-top: 0; }
+
+.disabled { color: #ccc !important; }
 
 
 

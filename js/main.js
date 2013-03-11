@@ -2,16 +2,21 @@
 	Javascript for Tough Mudder Training App
 ============================================================ */
 
-var currBootCamp = [];
+var currBootCamp = [],
+	currExercise = {},
+	currSec = 0,
+	timeInterval,
+	isLastExercise = false;
 
 // click handler for Boot Camp Select buttons
-bootCampSelectHandler = function() {
-	selBootCamp = this.innerHTML;
+bootCampSelectHandler = function(camp) {
+
+	var selBootCamp = camp;
 
 	// remove when second and third tier boot camps unlocked
 	if (selBootCamp == 'Maybe Mudder' || selBootCamp == 'Tough Mudder') {
 		alert('Sorry, this boot camp not supported at this time.');
-		return false;
+		window.location = '#pageHome';
 	}
 	
 	// loop through JSON and find selected boot camp
@@ -26,21 +31,126 @@ bootCampSelectHandler = function() {
 
 	});
 
-	loadBootCamp();
+	$('#mudderling header h1').text(currBootCamp.name);
+
+	currExercise = currBootCamp.obstacles[0]
+	loadExercise(false);
 
 }
 
-// load currently selected boot camp
-loadBootCamp = function() {
-	// fade out select screen
-	$('.boot-camp-select').fadeOut('fast', function() {
-		
-		// when finished, fade in boot camp screen
-	});
+// load in currently queued exercise
+loadExercise = function(autostart) {
+
+	if (currExercise.id == (currBootCamp.obstacles.length - 1)) {
+		isLastExercise = true;
+	}
+
+	// name
+	$('.exerciseInfo h2').text(currExercise.name);
+
+	// group
+	$('.exerciseInfo h5').text(currExercise.group);
+
+	// description
+	if (currExercise.description !== null) {
+		var desc = currExercise.description;
+
+		if (currExercise.description.length > 140) {
+			desc = currExercise.description.substring(0, 140) + '...<br/><a href="#">Read more</a>';
+		}
+
+		$('.exerciseInfo p').html(desc);
+	}
+
+	// time
+	currSec = currExercise.time;
+	calculateTime(currSec);
+
+	// run autostart or not
+	if (autostart)
+		timerStartClickHandler();
+
 }
 
-$(document).ready(function(){
+calculateTime = function(time) {
+	var min = Math.floor(time / 60),
+		sec = time - (min * 60);
 
-	$('.boot-camp-select button').on('click', bootCampSelectHandler);
+	if (min < 10)
+		min = '0' + min;
+
+	if (sec < 10)
+		sec = '0' + sec;
+	
+
+	$('.time p').text(min + ':' + sec);
+}
+
+// start the exercise timer
+timerStartClickHandler = function() {
+
+	clearInterval(timeInterval);
+	timeInterval = setInterval(countdown, 1000);
+	$('.timerStart').hide();
+	$('.timerPause').show();
+
+}
+
+// pause the exercise timer
+timerPauseClickHandler = function() {
+
+	clearInterval(timeInterval);
+	$('.timerPause').hide();
+	$('.timerStart').show();
+
+}
+
+countdown = function() {
+
+	if (currSec >= 1) {
+		currSec = currSec - 1;
+		calculateTime(currSec);
+	} else {
+		clearInterval(timeInterval);
+
+		if (!isLastExercise) {
+			currExercise = currBootCamp.obstacles[currExercise.id + 1]
+			loadExercise(true);
+		} else {
+			window.location = "#pageEnd";
+		}
+	}
+}
+
+resetWorkout = function() {
+	currBootCamp = [];
+	currExercise = {};
+	currSec = 0;
+	isLastExercise = false;
+	clearInterval(timeInterval);
+
+	$('.timerPause').hide();
+	$('.timerStart').show();	
+}
+
+$(document).delegate('.ui-page', 'pagebeforeshow', function () {
+
+	resetWorkout();
+
+    if (this.id == 'mudderling') {
+    	bootCampSelectHandler('Mudderling');
+    }
+
+	/*$('header .nextExercise').on('click', function(){
+		currExercise = currBootCamp.obstacles[currExercise.id + 1]
+		loadExercise();
+
+		if (currExercise.id == (currBootCamp.obstacles.length - 1)) {
+			$('header .nextExercise').off('click');
+		}
+	});*/
+
+	$('.timerStart').on('click', timerStartClickHandler);
+	$('.timerPause').on('click', timerPauseClickHandler);
 
 });

@@ -1,57 +1,235 @@
-{
-    "boot-camp": {
-        "Mudderling": [
-            {
-                "name": "Running",
-                "description": null,
-                "time": 120,
-                "group": "Warm-Up"
-            },
-            {
-                "name": "Grapevine",
-                "description": null,
-                "time": 120,
-                "group": "Warm-Up"
-            },
-            {
-                "name": "Side Shuffle",
-                "description": null,
-                "time": 120,
-                "group": "Warm-Up"
-            },
-            {
-                "name": "High Knees",
-                "description": null,
-                "time": 120,
-                "group": "Warm-Up"
-            },
-            {
-                "name": "Butt Kicks",
-                "description": null,
-                "time": 120,
-                "group": "Warm-Up"
-            },
-            {
-                "name": "You Don't Know Jacks",
-                "description": "Jumping Jacks: Just like you did in elementary school.  This time, only bring your arms down to your shoulders (not your hips) and all the way back up.  We want to see your hands graze each other when they go up.",
-                "time": 240,
-                "group": "Circuit 1"
-            },
-            {
-                "name": "Cliff Hanger",
-                "description": "Description for Cliff Hanger",
-                "time": 120,
-                "group": "Circuit 1"
-            },
-            {
-                "name": "Rest",
-                "description": null,
-                "time": 120,
-                "group": "Circuit 1"
-            }
-
-        ],
-        "Maybe Mudder": [],
-        "Tough Mudder": []
-    }
+var JSON = {
+    "bootCamps": [
+        {
+            "name": "Mudderling",
+            "obstacles": [
+                {
+                    "name": "Running",
+                    "description": null,
+                    "time": 60,
+                    "group": "Warm-Up"
+                },
+                {
+                    "name": "Grapevine",
+                    "description": null,
+                    "time": 60,
+                    "group": "Warm-Up"
+                },
+                {
+                    "name": "Side Shuffle",
+                    "description": null,
+                    "time": 60,
+                    "group": "Warm-Up"
+                },
+                {
+                    "name": "High Knees",
+                    "description": null,
+                    "time": 60,
+                    "group": "Warm-Up"
+                },
+                {
+                    "name": "Butt Kicks",
+                    "description": null,
+                    "time": 60,
+                    "group": "Warm-Up"
+                },
+                {
+                    "name": "Running Man",
+                    "description": "Run: Teadmill, sidewalk, whatever.",
+                    "time": 120,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "Berlin Walls",
+                    "description": "Push-Up: On the ground, place your hands directly under your shoulders and make sure your hips are in line with you back - no hiking or sagging.  Slowly lower yourself to the ground.  Your chest should touch the ground.  If you can't get your chest to the ground, drop to your knees.",
+                    "time": 60,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "You Don't Know Jacks",
+                    "description": "Jumping Jacks: Just like you did in elementary school.  This time, only bring your arms down to your shoulders (not your hips) and all the way back up.  We want to see your hands graze each other when they go up.",
+                    "time": 120,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "Cliff Hanger",
+                    "description": "Tough Squat: Stand with feet hip-distance apart with your toes, knees and hips in a straight line. Pull your belly button toward your spine and contract your abdominal muscles. Slowly lower your body, as though you are sitting in a chair. Lower until your butt is in line with your knees (knees at 90-degree angles). Make sure your knees are BEHIND your toes, your back is straight, and the weight is in your heels.",
+                    "time": 60,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "Do Work: Jump Rope",
+                    "description": "Jump Rope: Start with the standard jump by pushing off the ground evenly, with both feet. Resist the urge to bounce between jumps; because that just means you should be going faster.",
+                    "time": 120,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "Everest",
+                    "description": "Slippery Mountain Climbers: Find a wooden floor or flat surface and place your feet on two washcloths or a folded hand towel. Assume a high-plank position on the ground. Keeping your upper body still, draw one knee in at a time toward your hands, moving as quickly as possible. If you are on carpet, you can complete the exercise with sheets of printer paper under your feet.",
+                    "time": 120,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "REST",
+                    "description": null,
+                    "time": 60,
+                    "group": "Circuit 1"
+                },
+                {
+                    "name": "Log Bog Belly Bombers",
+                    "description": "Belly Bomber/ Burpee: Begin in a squat position with hands on the floor in front of you. Kick your feet back to a push-up/high-plank position. Immediately return your feet to the squat position. Jump as high as you can from the squat position. Repeat, moving as fast as possible and maintain a fast pace.",
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "Hangin' Tough",
+                    "description": "Turkish Getup: Start lying on your back, holding a kettle bell, dumbell, rock above one shoulder. Then simply stand up, using your free arm to help you up, while keeping the weight above you at all times. Keep the arm fully extended—don’t bend that elbow—as you lie back down and repeat. Switch sides halfway.",
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "Greased Lightning Skates",
+                    "description": "Skates: Stand with your feet shoulder-width apart and balance your weight on your right foot. Then pick up your left foot and loop it back behind you and toward the right leg, tracing a D-shape with your toes. Your left foot should be behind your right leg. Bring your left arm to your right foot. Now push with your right leg and transfer your weight to your left leg and bring your right leg behind your left. Bring your right arm to your left foot. Continue skating, gaining speed and distance between each skate.",
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "Turd's Nest",
+                    "description": "Crawl Outs: Stand with your legs straight and your hands flat on the floor. Keeping your legs completely straight, walk your hands forward as far as possible. Keep your stomach tight, with your navel pulled in toward your pelvis. Then take small steps to walk your feet forward to your hands, ending in the starting position. Repeat. Faster.",
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "Glacier Ski Jumps",
+                    "description": "Ski Jumps: Stand with your feet together on the side of a crack in the sidewalk or floor or next to a folded towel. Bend the knees and jump to the right as far as you can—think of jumping laterally rather than vertically. Land with soft knees and immediately jump laterally to the left.",
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "Bale Bonds",
+                    "description": "Side Planks: Start in a low-plank position: laying face-down and propping yourself up on your forearms. Slowly drop your right hip down to the ground with your core engaged. Switch to the left side and repeat until you feel the burn.",
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "REST",
+                    "description": null,
+                    "time": 60,
+                    "group": "Circuit 2"
+                },
+                {
+                    "name": "Spider Web Climbers",
+                    "description": "Standing Climbers: From a standing position, raise your left hand, reaching as high as you can, while driving your right knee up and out in a similar movement to the floor Mountain Climber. Switch by pulling down with your left hand and reaching high with your right hand. At the same time, let your right foot fall to the floor, then drive your left knee up and out.",
+                    "time": 120,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "Dirty Ballerina",
+                    "description": "Leap Frogs: Begin by lowering yourself into a low squatting position. Place your feet slightly wider than hip-width apart, bend your knees and lower your bum toward the ground. Continue lowering until your knees are as close to a 90-degree angle as possible. Stay in this position as you jump forward. Keep jumping.",
+                    "time": 60,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "High Steppin'",
+                    "description": "High Knees: Stand in place with your feet hip-width apart. Drive your right knee toward your chest and quickly place it back on the ground. Follow immediately by driving your left knee toward your chest. Hold arms out at shoulder length.",
+                    "time": 120,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "Funky Monkey",
+                    "description": "Pull-Ups: Hang from a bar with either an overhand or underhand grip and pull yourself up—be sure to try and touch your chest to the bar, or get as close as you can. If you can’t do a full pull-up, practice first with arm hangs.",
+                    "time": 60,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "Fire Walker Quick Feet",
+                    "description": "Quick Feet: Stand with your legs hip-width apart and start running in place on your toes. Increase your speed so that you feel like you are digging into the ground. Every 20 seconds, drop completely to the ground as fast as you can and jump back up to resume Quick Feet.",
+                    "time": 120,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "Twinkle Toes",
+                    "description": "Leg Hops: Stand on one leg and hop clockwise to each quadrant (four hops makes one rotation). After one rotation, begin hopping counterclockwise. Switch legs.",
+                    "time": 60,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "REST",
+                    "description": null,
+                    "time": 60,
+                    "group": "Circuit 3"
+                },
+                {
+                    "name": "Cool Down",
+                    "description": "30-second slow roll-down to touch toes, 30-second roll-up back to standing. Stretch your quads, back, shoulders, arms (whatever needs it). Sit on the ground with your legs up on a wall (your butt is flush against the wall) for 2 minutes.",
+                    "time": 300,
+                    "group": "Circuit 3"
+                }
+            ]
+        },
+        {
+            "name": "Maybe Mudder",
+            "obstacles": []
+        },
+        {
+            "name": "Tough Mudder",
+            "obstacles": []
+        }
+    ]
 }
+
+/*{
+    "Mudderling": [
+        {
+            "name": "Running",
+            "description": null,
+            "time": 120,
+            "group": "Warm-Up"
+        },
+        {
+            "name": "Grapevine",
+            "description": null,
+            "time": 120,
+            "group": "Warm-Up"
+        },
+        {
+            "name": "Side Shuffle",
+            "description": null,
+            "time": 120,
+            "group": "Warm-Up"
+        },
+        {
+            "name": "High Knees",
+            "description": null,
+            "time": 120,
+            "group": "Warm-Up"
+        },
+        {
+            "name": "Butt Kicks",
+            "description": null,
+            "time": 120,
+            "group": "Warm-Up"
+        },
+        {
+            "name": "You Don't Know Jacks",
+            "description": "Jumping Jacks: Just like you did in elementary school.  This time, only bring your arms down to your shoulders (not your hips) and all the way back up.  We want to see your hands graze each other when they go up.",
+            "time": 240,
+            "group": "Circuit 1"
+        },
+        {
+            "name": "Cliff Hanger",
+            "description": "Description for Cliff Hanger",
+            "time": 120,
+            "group": "Circuit 1"
+        },
+        {
+            "name": "Rest",
+            "description": null,
+            "time": 120,
+            "group": "Circuit 1"
+        }
+
+    ],
+    "Maybe Mudder": [],
+    "Tough Mudder": []
+}*/
