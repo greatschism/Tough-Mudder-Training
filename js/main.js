@@ -6,7 +6,8 @@ var currBootCamp = [],
 	currExercise = {},
 	currSec = 0,
 	timeInterval,
-	isLastExercise = false;
+	isLastExercise = false,
+	ping = document.getElementById('ping');;
 
 // click handler for Boot Camp Select buttons
 bootCampSelectHandler = function(camp) {
@@ -112,6 +113,7 @@ countdown = function() {
 		calculateTime(currSec);
 	} else {
 		clearInterval(timeInterval);
+		ping.play();
 
 		if (!isLastExercise) {
 			currExercise = currBootCamp.obstacles[currExercise.id + 1]
